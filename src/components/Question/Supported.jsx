@@ -1,26 +1,22 @@
 import Header from "../Header/Header";
 import { useHistory } from "react-router-dom";
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 function Supported() {
+  const dispatch = useDispatch();
   const history = useHistory();
 
   const [supported, setSupported] = useState("");
 
-   //saves data to object on submit/dispatch and push to next page
+  //saves data to object on submit/dispatch and push to next page
   const saveSupportedInformation = (event) => {
     event.preventDefault();
-    console.log("in save Supported");
 
-    const feedback = {
-      supported: supported,
-    };
-    console.log("feedback", feedback.supported);
-
-    // dispatch({
-    //         type: 'NEW_CUSTOMER',
-    //         payload: feedback
-    // })
+    dispatch({
+      type: "NEW_SUPPORTED",
+      payload: supported,
+    });
 
     // need to use history.push to move on to next screen
     history.push("/Comments");
@@ -36,8 +32,8 @@ function Supported() {
       <h6>1 being not good and 5 being Great</h6>
       <form onSubmit={saveSupportedInformation}>
         <input
-        //limit the client to only numbers between 1 and 5 and only one character long
-        onKeyPress={(event) => {
+          //limit the client to only numbers between 1 and 5 and only one character long
+          onKeyPress={(event) => {
             if (!/[0-5]/.test(event.key)) {
               event.preventDefault();
             }

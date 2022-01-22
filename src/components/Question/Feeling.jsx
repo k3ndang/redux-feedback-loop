@@ -1,26 +1,23 @@
 import Header from "../Header/Header";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 function Feeling() {
+  const dispatch = useDispatch();
   const history = useHistory();
+  
 
   const [feeling, setFeeling] = useState("");
 
-   //saves data to object on submit/dispatch and push to next page
+  //saves data to object on submit/dispatch and push to next page
   const saveFeelingInformation = (event) => {
     event.preventDefault();
-    console.log("in save customer info");
-
-    const feedback = {
-      feeling: feeling,
-    };
-    console.log("feedback", feedback.feeling);
-
-    // dispatch({
-    //         type: 'NEW_CUSTOMER',
-    //         payload: feedback
-    // })
+    
+    dispatch({
+      type: "NEW_FEELING",
+      payload: feeling,
+    });
 
     // need to use history.push to move on to next screen
     history.push("/Understanding");
@@ -36,8 +33,8 @@ function Feeling() {
       <h6>1 being not good and 5 being Great</h6>
       <form onSubmit={saveFeelingInformation}>
         <input
-        //limit the client to only numbers between 1 and 5 and only one character long
-        onKeyPress={(event) => {
+          //limit the client to only numbers between 1 and 5 and only one character long
+          onKeyPress={(event) => {
             if (!/[0-5]/.test(event.key)) {
               event.preventDefault();
             }

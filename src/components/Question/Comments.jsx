@@ -1,26 +1,22 @@
 import Header from "../Header/Header";
 import { useHistory } from "react-router-dom";
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 function Comments() {
+  const dispatch = useDispatch();
   const history = useHistory();
 
   const [comments, setComments] = useState("");
 
-   //saves data to object on submit/dispatch and push to next page
+  //saves data to object on submit/dispatch and push to next page
   const saveCommentsInformation = (event) => {
     event.preventDefault();
-    console.log("in save Comments");
 
-    const feedback = {
-      comments: comments,
-    };
-    console.log("feedback", feedback.comments);
-
-    // dispatch({
-    //         type: 'NEW_CUSTOMER',
-    //         payload: feedback
-    // })
+    dispatch({
+      type: "NEW_COMMENTS",
+      payload: comments,
+    });
 
     // need to use history.push to move on to next screen
     history.push("/Review");
