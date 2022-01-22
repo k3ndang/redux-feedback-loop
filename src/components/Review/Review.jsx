@@ -1,14 +1,21 @@
+import { useHistory } from "react-router-dom";
 
 function Review(){
+    const history = useHistory();
+const submit = () => {
     
 
+    console.log('submitted');
+    history.push("/ThankYou")
+}
 
 
     return(
         <>
         <h2>Review Your Feedback</h2>
         
-        <button>SUBMIT</button>
+        <button onClick={submit} >NEXT</button>
+      <br></br>
         </>
     );
 }

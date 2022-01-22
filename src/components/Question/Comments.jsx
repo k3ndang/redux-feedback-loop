@@ -7,6 +7,7 @@ function Comments() {
 
   const [comments, setComments] = useState("");
 
+   //saves data to object on submit/dispatch and push to next page
   const saveCommentsInformation = (event) => {
     event.preventDefault();
     console.log("in save Comments");

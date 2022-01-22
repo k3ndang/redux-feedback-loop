@@ -7,6 +7,7 @@ function Feeling() {
 
   const [feeling, setFeeling] = useState("");
 
+   //saves data to object on submit/dispatch and push to next page
   const saveFeelingInformation = (event) => {
     event.preventDefault();
     console.log("in save customer info");

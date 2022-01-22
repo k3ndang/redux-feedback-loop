@@ -7,6 +7,7 @@ function Supported() {
 
   const [supported, setSupported] = useState("");
 
+   //saves data to object on submit/dispatch and push to next page
   const saveSupportedInformation = (event) => {
     event.preventDefault();
     console.log("in save Supported");

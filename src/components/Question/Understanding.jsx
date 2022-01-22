@@ -7,10 +7,12 @@ function Understanding() {
 
   const [understanding, setUnderstanding] = useState("");
 
+  //saves data to object on submit/dispatch and push to next page
   const saveUnderstandingInformation = (event) => {
     event.preventDefault();
     console.log("in save understanding");
 
+    
     const feedback = {
       understanding: understanding,
     };
