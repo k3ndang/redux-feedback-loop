@@ -7,6 +7,9 @@ function Review() {
   const history = useHistory();
   const review = useSelector((store) => store.feedback);
 
+  //on submit dose a post request to send the object
+  //of all the collected properties to the DB
+  //then goes to next page
   const submit = () => {
     axios
       .post("/feedback", review)
@@ -25,7 +28,7 @@ function Review() {
   const goBack = () => {
     history.push("/Comments");
   };
-
+//list of all the inputted data
   return (
     <>
       <h2>Review Your Feedback</h2>

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import "../App/App.css";
 import Swal from "sweetalert2";
 
 function AdminItem({ result, getResults }) {
   let [flagged, setFlagged] = useState("");
-
+//put request to flag for review to toggle
   const review = () => {
     console.log("Review ID", result.id);
 
@@ -15,22 +14,14 @@ function AdminItem({ result, getResults }) {
       url: `/feedback/${result.id}`,
     })
       .then((result) => {
-        what();
         getResults();
       })
       .catch((err) => {
         console.error("PUT failed", err);
       });
   };
-  const what = () => {
-    console.log("inside what");
-    if (result.flagged === true) {
-      setFlagged("true");
-    } else {
-      setFlagged("false");
-    }
-  };
-
+  //END put request to flag for review to toggle
+  //Delete request to delete via admin screen with prompt
   const onDelete = (id) => {
     Swal.fire({
       title: "Do you want to Delete this Feedback?",
@@ -38,7 +29,6 @@ function AdminItem({ result, getResults }) {
       confirmButtonText: "DELETE",
       denyButtonText: `CANCEL`,
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire("Deleted!");
         console.log("ID", { id });
@@ -58,7 +48,8 @@ function AdminItem({ result, getResults }) {
       }
     });
   };
-
+// END Delete request to delete via admin screen with prompt
+//Returns to admin.jsx that loops and displays
   return (
     <>
       <td>
@@ -73,8 +64,6 @@ function AdminItem({ result, getResults }) {
       <td>
         <button onClick={() => onDelete(result.id)}>Delete</button>
       </td>
-
-      
     </>
   );
 }

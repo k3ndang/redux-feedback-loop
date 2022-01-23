@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 function ThankYou() {
   const dispatch = useDispatch();
   const history = useHistory();
-
+//dispalys thank you and brings you back to home page
   const reset = () => {
     console.log("submitted");
     history.push("/");

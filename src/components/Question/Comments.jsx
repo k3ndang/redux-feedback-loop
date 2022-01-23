@@ -7,7 +7,6 @@ function Comments() {
   const dispatch = useDispatch();
   const history = useHistory();
   const feedback = useSelector((store) => store.feedback);
-
   const [comments, setComments] = useState("");
 
   //saves data to object on submit/dispatch and push to next page
@@ -24,7 +23,7 @@ function Comments() {
 
     setComments("");
   };
-
+  // use history.push to move back to last screen
   const goBack = () => {
     history.push("/Supported");
   };

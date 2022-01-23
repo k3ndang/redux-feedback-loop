@@ -10,7 +10,8 @@ import Comments from "../Question/Comments";
 import Review from "../Review/Review";
 import ThankYou from "../ThankYou/ThankYou";
 import Admin from "../Admin/Admin";
-
+// function to create navigation through entire app LINKS/Routes
+//NAV is for dev to easily traverse the dom
 function App() {
   return (
     <Router>

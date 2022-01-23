@@ -12,6 +12,8 @@ function Admin() {
     getResults();
   }, []);
 
+  //Get request that gets  all data from the feedback DB
+  // then sets resultList to response
   const getResults = () => {
     axios({
       method: "GET",
@@ -25,7 +27,7 @@ function Admin() {
         console.log(err);
       });
   };
-
+  //loops through and displays content to admin page
   return (
     <>
       <header className="Admin-header">
@@ -43,7 +45,9 @@ function Admin() {
           </tr>
 
           {resultList.map((result) => (
-            <tr className= {result.flagged.toString()}  key={result.id}>
+            //sets class to a string of the result.flagged 
+            //this changes background to red if it is flagged
+            <tr className={result.flagged.toString()} key={result.id}>
               <AdminItem
                 key={result.id}
                 result={result}
