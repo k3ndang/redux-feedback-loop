@@ -15,7 +15,7 @@ const feedback = (
   state = {
     feeling: "",
     understanding: "",
-    supported: "",
+    support: "",
     comments: "",
   },
   action
@@ -29,7 +29,7 @@ const feedback = (
         understanding: (state.understanding = action.payload),
       };
     case "NEW_SUPPORTED":
-      return { ...state, supported: (state.supported = action.payload) };
+      return { ...state, support: (state.support = action.payload) };
     case "NEW_COMMENTS":
       return { ...state, comments: (state.comments = action.payload) };
   }
