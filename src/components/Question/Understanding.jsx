@@ -41,6 +41,7 @@ function Understanding() {
           }}
           type="text"
           maxLength="1"
+          required
           value={understanding}
           onChange={(evt) => setUnderstanding(evt.target.value)}
           placeholder="Understanding?"

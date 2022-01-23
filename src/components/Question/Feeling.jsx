@@ -41,6 +41,7 @@ function Feeling() {
           }}
           type="text"
           maxLength="1"
+          required
           value={feeling}
           onChange={(evt) => setFeeling(evt.target.value)}
           placeholder="Feeling"

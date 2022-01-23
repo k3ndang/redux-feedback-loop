@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 function Comments() {
   const dispatch = useDispatch();
   const history = useHistory();
+  const feedback = useSelector((store) => store.feedback);
 
   const [comments, setComments] = useState("");
 

@@ -39,6 +39,7 @@ function Supported() {
             }
           }}
           type="text"
+          required
           maxLength="1"
           value={supported}
           onChange={(evt) => setSupported(evt.target.value)}

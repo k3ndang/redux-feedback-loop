@@ -9,6 +9,7 @@ import Supported from "../Question/Supported";
 import Comments from "../Question/Comments";
 import Review from "../Review/Review";
 import ThankYou from "../ThankYou/ThankYou";
+import Admin from "../Admin/Admin";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Link to="/Comments">Comments</Link>
           <Link to="/Review">Review</Link>
           <Link to="/ThankYou">ThankYou</Link>
+          <Link to="/Admin">Admin</Link>
         </nav>
 
         <Route path="/" exact>
@@ -45,6 +47,10 @@ function App() {
 
         <Route path="/Comments" exact>
           <Comments />
+        </Route>
+
+        <Route path="/Admin" exact>
+          <Admin />
         </Route>
       </div>
     </Router>
