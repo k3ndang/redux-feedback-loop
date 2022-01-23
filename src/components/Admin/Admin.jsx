@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 function Admin() {
   let [resultList, setResultList] = useState([]);
@@ -21,6 +22,34 @@ function Admin() {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  const onDelete = (id) => {
+    Swal.fire({
+      title: "Do you want to Delete this Feedback?",
+      showDenyButton: true,
+      confirmButtonText: "DELETE",
+      denyButtonText: `CANCEL`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!");
+        console.log("ID", { id });
+        axios({
+          method: "DELETE",
+          url: `/feedback/${id}`,
+        })
+          .then((response) => {
+            getResults();
+          })
+          .catch((err) => {
+            showAlert("error Deleting feedback");
+            console.log(err);
+          });
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved");
+      }
+    });
   };
 
   return (
@@ -45,7 +74,7 @@ function Admin() {
               <td>{result.support}</td>
               <td>{result.comments}</td>
               <td>
-                <button>DELETE</button>
+                <button onClick={() => onDelete(result.id)}>Delete</button>
               </td>
             </tr>
           ))}
