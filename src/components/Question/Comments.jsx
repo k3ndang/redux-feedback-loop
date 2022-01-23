@@ -25,11 +25,18 @@ function Comments() {
     setComments("");
   };
 
+  const goBack = () => {
+    history.push("/Supported");
+  };
+
   return (
     <>
       <Header />
       <h2>Any comments you want to leave?</h2>
       <form onSubmit={saveCommentsInformation}>
+        <button onClick={goBack} className="backBtn" type="button">
+          Back
+        </button>
         <input
           type="text"
           value={comments}

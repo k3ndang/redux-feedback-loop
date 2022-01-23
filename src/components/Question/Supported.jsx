@@ -24,6 +24,10 @@ function Supported() {
     setSupported("");
   };
 
+  const goBack = () => {
+    history.push("/Understanding");
+  };
+
   return (
     <>
       <Header />
@@ -31,6 +35,9 @@ function Supported() {
       <h4>pick 1-5</h4>
       <h6>1 being not good and 5 being Great</h6>
       <form onSubmit={saveSupportedInformation}>
+        <button onClick={goBack} className="backBtn" type="button">
+          Back
+        </button>
         <input
           //limit the client to only numbers between 1 and 5 and only one character long
           onKeyPress={(event) => {

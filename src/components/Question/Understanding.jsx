@@ -24,6 +24,10 @@ function Understanding() {
     setUnderstanding("");
   };
 
+  const goBack = () => {
+    history.push("/");
+  };
+
   return (
     <>
       <Header />
@@ -31,6 +35,9 @@ function Understanding() {
       <h4>pick 1-5</h4>
       <h6>1 being not good and 5 being Great</h6>
       <form onSubmit={saveUnderstandingInformation}>
+        <button onClick={goBack} className="backBtn" type="button">
+          Back
+        </button>
         <input
           //limit the client to only numbers between 1 and 5 and only one character long
           onKeyPress={(event) => {
