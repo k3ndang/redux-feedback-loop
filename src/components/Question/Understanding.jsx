@@ -8,7 +8,6 @@ function Understanding() {
   const history = useHistory();
 
   const [understanding, setUnderstanding] = useState("");
-  
 
   //saves data to object on submit/dispatch and push to next page
   const saveUnderstandingInformation = (event) => {
