@@ -59,4 +59,24 @@ router.delete("/:feedbackId", (req, res) => {
     });
 });
 
+router.put("/:feedbackId", (req, res) => {
+  console.log("id is", req.params.feedbackId);
+
+  const queryText = `
+        UPDATE "feedback"
+        SET "flagged" = NOT "flagged"
+        WHERE "id" = $1
+        `;
+  let queryParams = [req.params.feedbackId];
+  pool
+    .query(queryText, queryParams)
+    .then(() => {
+      res.sendStatus(204);
+    })
+    .catch((err) => {
+      console.error("PUT failed", err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
