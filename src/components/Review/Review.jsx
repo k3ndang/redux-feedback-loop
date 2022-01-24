@@ -41,7 +41,7 @@ function Review() {
       <button onClick={goBack} className="backBtn" type="button">
         Back
       </button>
-      <button onClick={submit}>SUBMIT</button>
+      <button className="submitBtn" onClick={submit}>SUBMIT</button>
       <br></br>
     </>
   );

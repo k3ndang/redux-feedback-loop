@@ -36,7 +36,7 @@ function Comments() {
         <button onClick={goBack} className="backBtn" type="button">
           Back
         </button>
-        <input
+        <input className="comInput"
           type="text"
           value={comments}
           onChange={(evt) => setComments(evt.target.value)}

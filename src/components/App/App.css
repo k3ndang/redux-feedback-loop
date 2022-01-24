@@ -24,3 +24,39 @@ h4 {
 #true {
   background-color: red;
 }
+.nextBtn{
+  background-color: rgb(27, 9, 185);
+  height: 80px;
+  width: 120px;
+  border-radius: 50%;
+  font-size: 40px;
+  color: white;
+}
+.backBtn{
+  background-color: rgb(27, 9, 185);
+  height: 80px;
+  width: 120px;
+  border-radius: 50%;
+  font-size: 40px;
+  color: white;
+}
+
+.submitBtn{
+  background-color: rgb(10, 153, 29);
+  height: 80px;
+  width: 220px;
+  border-radius: 50%;
+  font-size: 40px;
+  color: white;
+}
+input{
+  width: 170px;
+  height: 100px;
+  font-size: 24px;
+  text-align: center;
+  background-color: rgb(219, 227, 255);
+  border-radius: 10px;
+}
+.comInput{
+  width: 60%;
+}
