@@ -11,6 +11,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import "../ThankYou/ThankYou.css";
 
 function Admin() {
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -62,6 +63,7 @@ function Admin() {
       <header className="Admin-header">
         <h1 className="Admin-title">Feedback Results!</h1>
       </header>
+      <body>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
@@ -91,6 +93,7 @@ function Admin() {
           </TableBody>
         </Table>
       </TableContainer>
+      </body>
     </>
   );
 }

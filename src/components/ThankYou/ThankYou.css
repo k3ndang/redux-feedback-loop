@@ -1,0 +1,31 @@
+header.thank{
+    border:2px solid black;
+    font-size: 90px;
+    padding: 40px;
+    margin: 50px;
+    
+}
+
+header.Admin-header{
+    border:2px solid black;
+    font-size: 30px;
+    padding: 10px;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+}
+body{
+    border:2px solid black;
+    
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 30%;
+}
+.thankBtn{
+    width: 40%;
+    height: 80px;
+    background-color: rgb(19, 100, 167);
+    border-radius: 50%;
+    font-size: 150%;
+    margin-bottom: 30%;
+}
