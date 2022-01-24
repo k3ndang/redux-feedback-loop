@@ -64,35 +64,35 @@ function Admin() {
         <h1 className="Admin-title">Feedback Results!</h1>
       </header>
       <body>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 700 }} aria-label="customized table">
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>Flag for Review</StyledTableCell>
-              <StyledTableCell align="right">Feeling</StyledTableCell>
-              <StyledTableCell align="right">
-                Comprehension&nbsp;
-              </StyledTableCell>
-              <StyledTableCell align="right">Support&nbsp;</StyledTableCell>
-              <StyledTableCell align="right">Comments&nbsp;</StyledTableCell>
-              <StyledTableCell align="right">Delete&nbsp;</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {resultList.map((result) => (
-              //sets id based on if true or false to set background color 
-              //of false to red
-              <StyledTableRow id={result.flagged.toString()} key={result.id}>
-                <AdminItem
-                  key={result.id}
-                  result={result}
-                  getResults={getResults}
-                />
-              </StyledTableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 700 }} aria-label="customized table">
+            <TableHead>
+              <TableRow>
+                <StyledTableCell>Flag for Review</StyledTableCell>
+                <StyledTableCell align="right">Feeling</StyledTableCell>
+                <StyledTableCell align="right">
+                  Comprehension&nbsp;
+                </StyledTableCell>
+                <StyledTableCell align="right">Support&nbsp;</StyledTableCell>
+                <StyledTableCell align="right">Comments&nbsp;</StyledTableCell>
+                <StyledTableCell align="right">Delete&nbsp;</StyledTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {resultList.map((result) => (
+                //sets id based on if true or false to set background color
+                //of false to red
+                <StyledTableRow id={result.flagged.toString()} key={result.id}>
+                  <AdminItem
+                    key={result.id}
+                    result={result}
+                    getResults={getResults}
+                  />
+                </StyledTableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </body>
     </>
   );

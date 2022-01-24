@@ -5,7 +5,7 @@ import "./ThankYou.css";
 function ThankYou() {
   const dispatch = useDispatch();
   const history = useHistory();
-//dispalys thank you and brings you back to home page
+  //dispalys thank you and brings you back to home page
   const reset = () => {
     console.log("submitted");
     history.push("/");
@@ -15,8 +15,10 @@ function ThankYou() {
     <>
       <header className="thank">Feedback</header>
       <body>
-      <h2>Thank You!</h2>
-      <button className="thankBtn" onClick={reset}>Leave New Feedback</button>
+        <h2>Thank You!</h2>
+        <button className="thankBtn" onClick={reset}>
+          Leave New Feedback
+        </button>
       </body>
     </>
   );

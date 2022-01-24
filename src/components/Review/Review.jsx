@@ -28,7 +28,7 @@ function Review() {
   const goBack = () => {
     history.push("/Comments");
   };
-//list of all the inputted data
+  //list of all the inputted data
   return (
     <>
       <h2>Review Your Feedback</h2>
@@ -41,7 +41,9 @@ function Review() {
       <button onClick={goBack} className="backBtn" type="button">
         Back
       </button>
-      <button className="submitBtn" onClick={submit}>SUBMIT</button>
+      <button className="submitBtn" onClick={submit}>
+        SUBMIT
+      </button>
       <br></br>
     </>
   );

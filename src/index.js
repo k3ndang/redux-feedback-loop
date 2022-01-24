@@ -20,13 +20,15 @@ const feedback = (
   },
   action
 ) => {
-  //switch statement that modifies the above object 
+  //switch statement that modifies the above object
   switch (action.type) {
     case "NEW_FEELING":
       return { ...state, feeling: (state.feeling = action.payload) };
     case "NEW_UNDERSTANDING":
       return {
-        ...state, understanding: (state.understanding = action.payload) };
+        ...state,
+        understanding: (state.understanding = action.payload),
+      };
     case "NEW_SUPPORTED":
       return { ...state, support: (state.support = action.payload) };
     case "NEW_COMMENTS":
