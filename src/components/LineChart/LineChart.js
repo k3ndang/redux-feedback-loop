@@ -26,7 +26,6 @@ const LineChart = () => {
         // map it out
         // add the corresponding data to the variable by pushing it
         response.data.map(data => {
-          console.log('data is', data.feeling);
           feeling.push(data.feeling);
           understand.push(data.understanding);
           support.push(data.support);
