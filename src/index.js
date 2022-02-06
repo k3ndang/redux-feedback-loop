@@ -43,7 +43,7 @@ const feedback = (
 // Create the store
 const store = createStore(
   combineReducers({
-    feedback: feedback,
+    feedback,
   }),
   applyMiddleware(logger)
 );

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Component, useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 
+import GraphChart from './GraphChart'
 import Feeling from "../Question/Feeling";
 import Understanding from "../Question/Understanding";
 import Supported from "../Question/Supported";
@@ -13,6 +14,24 @@ import Admin from "../Admin/Admin";
 // function to create navigation through entire app LINKS/Routes
 //NAV is for dev to easily traverse the dom
 function App() {
+//   const dispatch = useDispatch();
+//   let [resultList, setResultList] = useState([]);
+//   console.log('resultList is:', resultList);
+
+//   useEffect (() => {
+//     axios({
+//       method: "GET",
+//       url: "/feedback",
+//     })
+//       .then((response) => {
+//         setResultList(response.data);
+//         console.log("result list", { resultList });
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+// }, []);
+
   return (
     <Router>
       <div className="App">
@@ -28,6 +47,8 @@ function App() {
 
         <Route path="/" exact>
           <Feeling />
+          <br />
+          <GraphChart />
         </Route>
 
         <Route path="/Understanding" exact>
