@@ -3,22 +3,28 @@ import Chart from "react-apexcharts";
 import axios from "axios";
 
 const LineChart = () => {
-  // set all the 
+
+  // set all state to empty array
   const [date, setDate] = useState([]);
   const [feelingData, setFeelingData] = useState([]);
   const [understandData, setUnderstandData] = useState([]);
   const [supportData, setSupportData] = useState([]);
 
+  // when page load run this
   useEffect(() => {
+    // all variables to empty array
     const feeling = [];
     const understand = [];
     const support = [];
     const date = []
 
+    // this axios get the data from database
     axios.get('/feedback')
       .then(response => {
         console.log('response data:', response.data)
-
+        // got the response data back
+        // map it out
+        // add the corresponding data to the variable by pushing it
         response.data.map(data => {
           console.log('data is', data.feeling);
           feeling.push(data.feeling);
@@ -27,6 +33,7 @@ const LineChart = () => {
           date.push(data.date)
           
         })
+        // add the data to the corresponding state
         setDate(date)
         setFeelingData(feeling);
         setUnderstandData(understand);
@@ -37,15 +44,26 @@ const LineChart = () => {
   return (
     <>
     <Chart 
+
+    // this options are how the chart look
+    // you also set your x-axis data into here
       options = {{
         chart: {
-          id: 'Woodall Survey'
+          id: 'woodallSurey'
         },
         xaxis: {
           categories: date
-        }
+        },
+        title: {
+          text: 'Woodall Survey',
+          align: 'center'
+        },
+        stroke: {
+          curve: 'smooth'
+        },
       }}
-
+      
+      // putting the data into the series
       series = {[{
         name: 'Feeling',
         data: feelingData
