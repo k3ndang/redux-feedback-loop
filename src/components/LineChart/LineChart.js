@@ -48,7 +48,8 @@ const LineChart = () => {
     // you also set your x-axis data into here
       options = {{
         chart: {
-          id: 'woodallSurey'
+          id: 'woodallSurey',
+          stacked: false,
         },
         xaxis: {
           categories: date
@@ -58,8 +59,23 @@ const LineChart = () => {
           align: 'center'
         },
         stroke: {
-          curve: 'smooth'
+          curve: 'smooth',
+          width: 3
         },
+        fill: {
+          type: 'gradient',
+          gradient: {
+            shadeIntensity: 1,
+            opacityFrom: 0.7,
+            opacityTo: 0.9,
+            stops: [0, 90, 100]}
+        },
+        dataLabels: {
+          enabled: false
+        },
+        yaxis: {
+          max: 6
+        }
       }}
       
       // putting the data into the series
@@ -77,8 +93,8 @@ const LineChart = () => {
       }
       ]}
 
-      type='line'
-      width= '80%'
+      type='bar'
+      width= '100%'
       height={300}
     />
     </>
